@@ -217,9 +217,17 @@ export const skills = {
 
 export const spokenLanguages = [
   { name: "Arabic", level: "Native" },
-  { name: "English", level: "B2" },
-  { name: "French", level: "A2" },
+  { name: "English", level: "C1" },
+  { name: "French", level: "B2" },
   { name: "German", level: "A2" },
 ];
 
-export const softSkills = ["Problem solving", "Adaptability", "Teamwork", "Perseverance", "Autonomy"];
+export const softSkills = [
+  "Problem solving",
+  "Effective communication",
+  "Adaptability",
+  "Flexibility",
+  "Teamwork",
+  "Perseverance",
+  "Autonomy",
+];

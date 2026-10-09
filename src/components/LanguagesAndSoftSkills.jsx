@@ -39,16 +39,23 @@ export default function LanguagesAndSoftSkills() {
                   <span className="text-ink">{lang.name}</span>
                   <span className="text-xs font-medium text-ink-faint">{lang.level}</span>
                 </div>
-                <div className="mt-1.5 h-1 overflow-hidden rounded-full bg-line">
+                {/* observe the full-width track: a 0-width bar is never reported in view on some mobile browsers */}
+                <motion.div
+                  className="mt-1.5 h-1 overflow-hidden rounded-full bg-line"
+                  initial="empty"
+                  whileInView="filled"
+                  viewport={{ once: true, amount: 0.5 }}
+                >
                   <motion.div
                     className="h-full rounded-full"
                     style={{ background: "linear-gradient(90deg, var(--color-accent), var(--color-pink))" }}
-                    initial={{ width: 0 }}
-                    whileInView={{ width: levelWidth[lang.level] ?? "50%" }}
-                    viewport={{ once: true, margin: "-60px" }}
+                    variants={{
+                      empty: { width: 0 },
+                      filled: { width: levelWidth[lang.level] ?? "50%" },
+                    }}
                     transition={{ duration: 0.7, delay: 0.1 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                   />
-                </div>
+                </motion.div>
               </div>
             ))}
           </div>
